@@ -28,6 +28,31 @@ export default function Home() {
         </div>
 
       </div>
+      <section className={styles.about}>
+        <h2>About Me</h2>
+        
+        <div className={styles.whoIAm}>
+          <h3>Who I Am</h3>
+          <p>I'm a Frontend Developer and future AI Engineer.
+           I enjoy creating clean, modern and interactive websites.</p>
+
+          <dl className={styles.personalInfo}>
+            <dt>Name</dt>
+            <dd>Shirin Skandari</dd>
+
+            <dt>Age</dt>
+            <dd>16</dd>
+
+            <dt>Location</dt>
+            <dd>Tehran, Iran</dd>
+
+            <dt>Focus</dt>
+            <dd>Frontend & AI</dd>
+          </dl>
+          
+        </div>
+
+      </section>
       
     </main>
   );

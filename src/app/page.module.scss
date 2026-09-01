@@ -90,3 +90,23 @@
   color:  #222;
   letter-spacing: 1px;
 }
+.personalInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
+  padding: 20px;
+
+  dt {
+    font-size: 15px;
+    font-weight: 500;
+    color: #222;
+  }
+
+  dd {
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+    margin: 0;
+  }
+}
