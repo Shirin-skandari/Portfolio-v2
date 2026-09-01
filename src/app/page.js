@@ -19,17 +19,18 @@ export default function Home() {
           I create clean, modern and interactive websites.
         </p>
         <div className={styles.homeButtons}>
-          <button className={styles.primaryButton}>
+          <a href="#projects" className={styles.primaryButton}>
             View My Work
-            </button>
-          <button className={styles.secondaryButton}>
+            </a>
+          <a href="#about" className={styles.secondaryButton}>
             About Me
-            </button>
+            </a>
         </div>
 
       </div>
-      <section className={styles.about}>
-        <h2>About Me</h2>
+      <section id="about" className={styles.about}>
+      
+        <h2 className={styles.sectionTitle}>About Me</h2>
         
         <div className={styles.whoIAm}>
           <h3>Who I Am</h3>
@@ -37,21 +38,27 @@ export default function Home() {
            I enjoy creating clean, modern and interactive websites.</p>
 
           <dl className={styles.personalInfo}>
-            <dt>Name</dt>
-            <dd>Shirin Skandari</dd>
+            <div className={styles.infoItem}>
+              <dt>Name</dt>
+              <dd>Shirin Skandari</dd>
+            </div>
 
-            <dt>Age</dt>
-            <dd>16</dd>
+            <div className={styles.infoItem}>
+              <dt>Age</dt>
+              <dd>16</dd>
+            </div>
 
-            <dt>Location</dt>
-            <dd>Tehran, Iran</dd>
+            <div className={styles.infoItem}>
+              <dt>Location</dt>
+              <dd>Tehran, Iran</dd>
+            </div>
 
-            <dt>Focus</dt>
-            <dd>Frontend & AI</dd>
+            <div className={styles.infoItem}>
+              <dt>Focus</dt>
+              <dd>Frontend & AI</dd>
+            </div>
           </dl>
-          
-        </div>
-
+    </div>
       </section>
       
     </main>
