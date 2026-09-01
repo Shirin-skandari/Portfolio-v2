@@ -1,6 +1,22 @@
 import styles from "./page.module.scss";
 
 export default function Home() {
+  const skills = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Python",
+    "Git",
+    "GitHub",
+    "VS Code"
+  ];
+
+  const achievements = [
+    "Built and launched my personal portfolio website.",
+    "Completed a Python programming course.",
+    "Achieved top rank in my English language class.",
+    "Continuously improvging my English toward B2."
+  ];
   return (
     <main className={styles.home}>
       <div className={styles.hero}>
@@ -25,9 +41,13 @@ export default function Home() {
           <a href="#about" className={styles.secondaryButton}>
             About Me
             </a>
+          <a href="#resume" className={styles.secondaryButton}>
+            Resume
+          </a>
         </div>
 
       </div>
+
       <section id="about" className={styles.about}>
       
         <h2 className={styles.sectionTitle}>About Me</h2>
@@ -90,11 +110,50 @@ export default function Home() {
             <dd>
               <h4>Frontend & AI</h4>
               <p>
-                Building real projects, improving my English, and preparing for AI Engineering
+                Building real projects, improving my English, and preparing for AI Engineering.
               </p>
             </dd>
           </div> 
         </dl>
+      </section>
+
+
+      <section id="resume" className={styles.resume}>
+        <h2 className={styles.sectionTitle}>Resume</h2>
+
+        <div className={styles.education}>
+          <h3>Education</h3>
+          
+          <div className={styles.educationItem}>
+            <span>2022 - Present</span>
+            <div>
+              <h4>High School Student</h4>
+              <p>Software & Network Engineering</p>
+            </div>
+          </div>
+        </div>
+
+      <div className={styles.skills}>
+        <h3>Skills</h3>
+
+        <div className={styles.skillList}>
+          {skills.map((skill) => (
+            <span key={skill}>{skill}</span>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.achievements}>
+        <h3>Achievement</h3>
+
+        <div className={styles.achievements}>
+          {achievements.map((achievement) => (
+            <div className={styles.achievement} key={achievement}>
+              {achievement}
+            </div>
+          ))}
+        </div>
+      </div>
       </section>
       
     </main>
