@@ -19,8 +19,12 @@ export default function Home() {
           I create clean, modern and interactive websites.
         </p>
         <div className={styles.homeButtons}>
-          <button>View My Work</button>
-          <button>About Me</button>
+          <button className={styles.primaryButton}>
+            View My Work
+            </button>
+          <button className={styles.secondaryButton}>
+            About Me
+            </button>
         </div>
 
       </div>
