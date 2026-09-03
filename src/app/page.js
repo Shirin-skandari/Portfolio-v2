@@ -41,6 +41,33 @@ export default function Home() {
       year: "2026",
     },
   ];
+
+  const projects = [
+    {
+      title: "Personal Portfolio",
+      description:
+        "A modern personal portfolio website built to showcase my skills and projects.",
+      technologies: ["Next.js", "React", "SCSS"],
+      live: "#",
+      github: "#",
+    },
+    {
+      title: "To-Do List",
+      description:
+        "A simple and interactive task management application.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      live: "#",
+      github: "#",
+    },
+    {
+      title: "Calculator",
+      description:
+        "A simple and responsive calculator application with a clean user interface.",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      live: "#",
+      github: "#",
+    },
+  ];
   return (
     <main className={styles.home}>
       <div className={styles.hero}>
@@ -247,6 +274,38 @@ export default function Home() {
           ))}
         </div>
       </div>
+      </section>
+
+      <section id="projects" className={styles.projects}>
+        <h2 className={styles.sectionTitle}>Projects</h2>
+
+        <div className={styles.projectsGrid}>
+          {projects.map((project) => (
+            <article className={styles.projectCard} key={project.title}>
+              <div className={styles.projectContent}>
+                <h3>{project.title}</h3>
+
+                <p>{project.description}</p>
+
+                <div className={styles.technologies}>
+                  {project.technologies.map((technology) => (
+                    <span key={technology}>{technology}</span>
+                  ))}
+                </div>
+
+                <div className={styles.projectButtons}>
+                  <a href={project.live} className={styles.primaryButton}>
+                    Live Demo
+                  </a>
+
+                  <a href={project.github} className={styles.secondaryButton}>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
       
     </main>

@@ -409,6 +409,83 @@
   } 
 }
 
+.projects {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 100px 20px;
+  }
+
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .projectCard {
+    background: #fff;
+    border: 1px solid rgba(255, 108, 67, 0.15);
+    border-radius: 16px;
+    transition: 0.3s;
+    overflow: hidden;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 108, 67, 0.35);
+      box-shadow: 0 12px 30px rgba(255, 108, 67, 0.1);
+    }
+  }
+
+  .projectContent {
+    padding: 28px;
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+      color: #222;
+    }
+
+    > p {
+      margin: 0 0 20px;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  }
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+
+  span {
+    padding: 6px 12px;
+    background: rgba(255, 108, 67, 0.08);
+    color: #ff6c43;
+    border: 1px solid rgba(255, 108, 67, 0.15);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.projectButtons {
+  display: flex;
+  gap: 12px;
+
+  a {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
 @media (max-width: 768px) {
   .homeButtons {
     justify-content: center;
@@ -452,6 +529,12 @@
     .achievementList {
       grid-template-columns: 1fr;
     }
+  }
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+  .projects {
+    padding: 70px 20px;
   }
 
 }
