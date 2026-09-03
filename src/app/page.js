@@ -50,6 +50,7 @@ export default function Home() {
       technologies: ["Next.js", "React", "SCSS"],
       live: "#",
       github: "#",
+      type: "portfolio",
     },
     {
       title: "To-Do List",
@@ -58,6 +59,7 @@ export default function Home() {
       technologies: ["HTML", "CSS", "JavaScript"],
       live: "#",
       github: "#",
+      type: "todo",
     },
     {
       title: "Calculator",
@@ -66,6 +68,7 @@ export default function Home() {
       technologies: ["HTML", "CSS", "JavaScript"],
       live: "#",
       github: "#",
+      type: "calculator",
     },
   ];
   return (
@@ -281,8 +284,22 @@ export default function Home() {
 
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
-            <article className={styles.projectCard} key={project.title}>
-              <div className={styles.projectContent}>
+           <article className={styles.projectCard} key={project.title}>
+            <div className={styles.projectPreview}>
+              <div className={styles.browserBar}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div
+                className={`${styles.previewScreen} ${styles[project.type]}`}
+              >
+                <span className={styles.previewLabel}>{project.title}</span>
+              </div>
+            </div>
+
+            <div className={styles.projectContent}>
                 <h3>{project.title}</h3>
 
                 <p>{project.description}</p>

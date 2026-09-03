@@ -414,7 +414,7 @@
     max-width: 900px;
     margin: 0 auto;
     padding: 100px 20px;
-  }
+  
 
   .projectsGrid {
     display: grid;
@@ -436,6 +436,77 @@
     }
   }
 
+  .projectPreveiw {
+    overflow: hidden;
+    border-radius: 12px 12px 0 0 ;
+    background: #f5f5f5;
+  }
+
+  .browserBar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 32px;
+    padding: 0 12px;
+    background: #eeeeee;
+
+    span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50px;
+      background: #cccccc;
+    }
+  }
+
+  .previewScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 180px;
+    padding: 20px;
+
+    background: #fafafa;
+    transition: 0.3s ease;
+  }
+
+  .previewLabel {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+  }
+
+  .portfolio {
+    background: linear-gradient(
+      135deg,
+      #fff5f1,
+      #ffe8df
+    );
+  }
+
+  .todo {
+    background: linear-gradient(
+      135deg, 
+      #f1f7ff, 
+      #e2efff
+    ) ;
+  }
+
+  .calculator {
+    background: linear-gradient(
+      135deg,
+      #f5f5f5,
+      #e8e8e8
+    );
+  }
+
+  .projectCard:hover {
+    .previewScreen {
+      transform: scale(1.02);
+    }
+  }
+
   .projectContent {
     padding: 28px;
 
@@ -452,37 +523,36 @@
       line-height: 1.7;
     }
   }
-.technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 24px;
 
-  span {
-    padding: 6px 12px;
-    background: rgba(255, 108, 67, 0.08);
-    color: #ff6c43;
-    border: 1px solid rgba(255, 108, 67, 0.15);
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
+  .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+
+    span {
+      padding: 6px 11px;
+      background: rgba(255, 108, 67, 0.08);
+      border: 1px solid rgba(255, 108, 67, 0.15);
+      border-radius: 20px;
+      color: #ff6c43;
+      font-size: 12px;
+      font-weight: 600;
+    }
   }
-}
 
-.projectButtons {
-  display: flex;
-  gap: 12px;
+  .projectButtons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
 
-  a {
-    padding: 10px 18px;
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-
-    &:hover {
-      transform: translateY(-3px);
+    a {
+      padding: 10px 16px;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
     }
   }
 }
