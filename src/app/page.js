@@ -1,21 +1,29 @@
 import styles from "./page.module.scss";
 
 export default function Home() {
-  const skills = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Python",
-    "Git",
-    "GitHub",
-    "VS Code"
-  ];
+ const skills = {
+    frontend: [
+      { name: "HTML", level: 90 },
+      { name: "CSS", level: 80 },
+      { name: "JavaScript", level: 55 },
+    ],
+
+    programming: [
+      { name: "Python", level: 75 },
+    ],
+
+    tools: [
+      { name: "Git", level: 50 },
+      { name: "GitHub", level: 60 },
+      { name: "VS Code", level: 75 },
+    ],
+  };
 
   const achievements = [
     "Built and launched my personal portfolio website.",
     "Completed a Python programming course.",
     "Achieved top rank in my English language class.",
-    "Continuously improvging my English toward B2."
+    "Continuously improving my English toward B2."
   ];
   return (
     <main className={styles.home}>
@@ -129,26 +137,90 @@ export default function Home() {
             <div>
               <h4>High School Student</h4>
               <p>Software & Network Engineering</p>
+              <p>GPA: 18.77 / 20</p>
+              <p>Focus: Programming & Web Development</p>
             </div>
           </div>
         </div>
 
-      <div className={styles.skills}>
-        <h3>Skills</h3>
+        <div className={styles.skills}>
+          <h3>Skills</h3>
 
-        <div className={styles.skillList}>
-          {skills.map((skill) => (
-            <span key={skill}>{skill}</span>
-          ))}
+          <div className={styles.skillCategories}>
+            <div className={styles.skillCategory}>
+              <h4>Frontend</h4>
+
+              <div className={styles.skillList}>
+                {skills.frontend.map((skill) => (
+                  <div className={styles.skillCard} key={skill.name}>
+                    <div className={styles.skillHeader}>
+                      <span>{skill.name}</span>
+                      <span>{skill.level}%</span>
+                    </div>
+
+                    <div className={styles.skillBar}>
+                      <div
+                        className={styles.skillProgress}
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.skillCategory}>
+              <h4>Programming</h4>
+
+              <div className={styles.skillList}>
+                {skills.programming.map((skill) => (
+                  <div className={styles.skillCard} key={skill.name}>
+                    <div className={styles.skillHeader}>
+                      <span>{skill.name}</span>
+                      <span>{skill.level}%</span>
+                    </div>
+
+                    <div className={styles.skillBar}>
+                      <div
+                        className={styles.skillProgress}
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.skillCategory}>
+              <h4>Tools</h4>
+
+              <div className={styles.skillList}>
+                {skills.tools.map((skill) => (
+                  <div className={styles.skillCard} key={skill.name}>
+                    <div className={styles.skillHeader}>
+                      <span>{skill.name}</span>
+                      <span>{skill.level}%</span>
+                    </div>
+
+                    <div className={styles.skillBar}>
+                      <div
+                        className={styles.skillProgress}
+                        style={{ width: `${skill.level}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
       <div className={styles.achievements}>
         <h3>Achievement</h3>
 
-        <div className={styles.achievements}>
+        <div className={styles.achievementList}>
           {achievements.map((achievement) => (
-            <div className={styles.achievement} key={achievement}>
+            <div className={styles.achievementItem} key={achievement}>
               {achievement}
             </div>
           ))}
