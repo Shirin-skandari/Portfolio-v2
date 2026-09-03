@@ -20,10 +20,26 @@ export default function Home() {
   };
 
   const achievements = [
-    "Built and launched my personal portfolio website.",
-    "Completed a Python programming course.",
-    "Achieved top rank in my English language class.",
-    "Continuously improving my English toward B2."
+    {
+      title: "Personal Portfolio",
+      description: "Built and launched my personal portfolio website.",
+      year: "2026",
+    },
+    {
+      title: "Python Course",
+      description: "Completed a Python programming course.",
+      year: "2025",
+    },
+    {
+      title: "Top Student",
+      description: "Achieved top rank in my English language class.",
+      year: "2026",
+    },
+    {
+      title: "English Progress",
+      description: "Continuously improving my English toward B2.",
+      year: "2026",
+    },
   ];
   return (
     <main className={styles.home}>
@@ -220,8 +236,13 @@ export default function Home() {
 
         <div className={styles.achievementList}>
           {achievements.map((achievement) => (
-            <div className={styles.achievementItem} key={achievement}>
-              {achievement}
+            <div className={styles.achievementItem} key={achievement.title}>
+              <span>{achievement.year}</span>
+
+              <div>
+                <h4>{achievement.title}</h4>
+                <p>{achievement.description}</p>
+              </div>
             </div>
           ))}
         </div>

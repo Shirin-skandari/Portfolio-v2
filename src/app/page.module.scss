@@ -307,12 +307,12 @@
     background: rgba(255, 108, 67, 0.04);
     border: 1px solid rgba(255, 108, 67, 0.15);
     border-radius: 14px;
-  }
 
-  h4 {
-    margin: 0 0  18px;
-    font-size: 18px;
-    color: #222;
+    h4 {
+      margin: 0 0 18px;
+      font-size: 18px;
+      color: #222;
+    }
   }
 
   .skillCard {
@@ -362,23 +362,49 @@
     border-radius: inherit;
   }
 
-  .achievementList {
+ .achievementList {
     display: grid;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .achievementItem{
-    padding: 18px 20px;
-    border-left: 3px solid #ff6c43;
-    background: rgba(255, 108, 67, 0.05);
-    color: #444;
-    line-height: 1.6;
-    border-radius: 0 10px 10px 0;
+  .achievementItem {
+    position: relative;
+    padding: 24px;
+    background: #fff;
+    border: 1px solid rgba(255, 108, 67, 0.15);
+    border-radius: 16px;
     transition: 0.3s;
+    overflow: hidden;
+
+    > span {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 5px 12px;
+      background: rgba(255, 108, 67, 0.1);
+      color: #ff6c43;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    h4 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      color: #222;
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
 
     &:hover {
-      transform: translateX(5px);
-      background: rgba(255, 108, 67, 0.1);
+      transform: translateY(-5px);
+      border-color: rgba(255, 108, 67, 0.35);
+      box-shadow: 0 10px 25px rgba(255, 108, 67, 0.08);
     }
-  }
+  } 
 }
