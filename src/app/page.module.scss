@@ -408,3 +408,50 @@
     }
   } 
 }
+
+@media (max-width: 768px) {
+  .homeButtons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .personalInfo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about,
+  .resume {
+    padding: 70px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+  .myJourney {
+    .journeyItem {
+      grid-template-columns: 1fr;
+      gap: 15px;
+
+      dt {
+        width: fit-content;
+      }
+    }
+  }
+
+  .resume {
+    .educationItem {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .skillCategories {
+      grid-template-columns: 1fr;
+    }
+
+    .achievementList {
+      grid-template-columns: 1fr;
+    }
+  }
+
+}
