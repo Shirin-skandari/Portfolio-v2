@@ -556,6 +556,139 @@
     }
   }
 }
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent {
+  position: relative;
+
+  width: 600px;
+  max-width: 90%;
+
+  background: white;
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.modalClose {
+  position: absolute;
+  padding: 10px 16px;
+  top: 8px;
+  right: 14px;
+  background: #fa663d;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.modalPreview {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    font-size: 30px;
+    font-weight: 600;
+    color: #8b8b8bab;
+  }
+}
+.modalInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  margin: 5px;
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #333;
+    z-index: 1;
+  }
+
+  h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #ff6c43;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+  }
+  &:hover::before {
+    transform: translateX(0);
+  }
+
+  > p {
+    margin: 10px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #222;
+  }
+
+}
+.modalTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  span {
+    padding: 6px 11px;
+    background: rgba(255, 108, 67, 0.08);
+    border: 1px solid rgba(255, 108, 67, 0.15);
+    border-radius: 20px;
+    color: #ff6c43;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+.modalFeatures {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+
+  li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+.modalButtons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  a {
+    padding: 11px 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
 @media (max-width: 768px) {
   .homeButtons {
     justify-content: center;
@@ -605,6 +738,26 @@
   }
   .projects {
     padding: 70px 20px;
+  }
+
+  .modalContent {
+    width: 92%;
+    max-height: 85vh;
+    border-radius: 16px;
+  }
+
+  .modalInfo {
+    padding: 22px;
+  }
+
+  .modalButtons {
+    flex-direction: column;
+
+    a {
+      width: 100%;
+      box-sizing: border-box;
+      justify-content: center;
+    }
   }
 
 }

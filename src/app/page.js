@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./page.module.scss";
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
  const skills = {
     frontend: [
       { name: "HTML", level: 90 },
@@ -47,6 +52,14 @@ export default function Home() {
       title: "Personal Portfolio",
       description:
         "A modern personal portfolio website built to showcase my skills and projects.",
+      details:
+      "A personal portfolio website designed and developed to showcase my skills, experience, achievements, and projects in a clean and modern interface.",
+      features: [
+        "Responsive design",
+        "Modern UI",
+        "Project showcase",
+        "Skills and achievements sections",
+      ],
       technologies: ["Next.js", "React", "SCSS"],
       live: "#",
       github: "#",
@@ -56,6 +69,12 @@ export default function Home() {
       title: "To-Do List",
       description:
         "A simple and interactive task management application.",
+      details: "An interactive task management application that allows users to organize their daily tasks through a simple and clean interface.",
+      features: [ "Add tasks",
+         "Delete tasks", 
+         "Interactive UI", 
+        "Responsive design",
+      ],
       technologies: ["HTML", "CSS", "JavaScript"],
       live: "#",
       github: "#",
@@ -65,6 +84,13 @@ export default function Home() {
       title: "Calculator",
       description:
         "A simple and responsive calculator application with a clean user interface.",
+      details: "A responsive calculator built with JavaScript, featuring a clean interface and basic arithmetic operations.",
+      features:
+       [ "Basic arithmetic operations",
+         "Responsive layout", 
+         "Interactive buttons",
+          "Clean UI", 
+        ],
       technologies: ["HTML", "CSS", "JavaScript"],
       live: "#",
       github: "#",
@@ -284,7 +310,13 @@ export default function Home() {
 
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
-           <article className={styles.projectCard} key={project.title}>
+           <article 
+              className={styles.projectCard} 
+              key={project.title}
+              onClick={() => {
+                setSelectedProject(project);
+              }}
+           > 
             <div className={styles.projectPreview}>
               <div className={styles.browserBar}>
                 <span></span>
@@ -325,6 +357,64 @@ export default function Home() {
         </div>
       </section>
       
+      {selectedProject && (
+        <div 
+          className={styles.modalOverlay}
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+          className={styles.modalContent}
+          onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+            className={styles.modalClose}
+            onClick={() => setSelectedProject(null)}
+          >
+            × 
+            </button>
+            <div 
+              className={`${styles.modalPreview} ${styles[selectedProject.type]}`}
+            >
+              <span>{selectedProject.title}</span>
+            </div>
+            <div className={styles.modalInfo}>
+              <h2>{selectedProject.title}</h2>
+
+              <p>{selectedProject.details}</p>
+
+              <div className={styles.modalTechnologies}>
+                {selectedProject.technologies.map((technology) => (
+                  <span key={technology}>{technology}</span>
+                ))}
+              </div>
+
+              <h3>Features</h3>
+
+              <ul className={styles.modalFeatures}>
+                {selectedProject.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+
+              <div className={styles.modalButtons}>
+                <a
+                  href={selectedProject.live}
+                  className={styles.primaryButton}
+                >
+                  Live Demo
+                </a>
+
+                <a 
+                  hred={selectedProject.github}
+                  className={styles.secondaryButton}
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
