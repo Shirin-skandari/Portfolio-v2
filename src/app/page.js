@@ -5,6 +5,11 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [formData, setFormData] = usueState({
+    name: "",
+    email: "",
+    message: "",
+  })
 
  const skills = {
     frontend: [
@@ -364,12 +369,68 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Contact</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
+            <form>
+              <div className={styles.formGroup}>
+                <label>Name</label>
+                <input 
+                type="text"
+                name="name"
+                placeholder="Enter your Beautiful Name"
+                required
+                value={formData.name}
+                onChange={(e) => {
+                  setFormData({
+                    ...formData,
+                    name: ee.target.value,
+                  });
+                }}
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Email</label>
+                <input 
+                type="email"
+                name="email"
+                placeholder="Enter your Amazing Email"
+                required
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    email: e.target.value,
+                  })
+                }
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label>Message</label>
+                <textarea 
+                name="message"
+                placeholder="Tell me what's on your mind... ✨"
+                required
+                value={formData.message}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    message: e.target.value,
+                  })
+                }
+                />
+              </div>
+
+              <button type="submit">Send Message</button>
+            </form>
 
           </div>
           <div className={styles.contactForm}></div>
 
         </div>
-        </section>      
+        </section>  
+
+
+
       {selectedProject && (
         <div 
           className={styles.modalOverlay}
