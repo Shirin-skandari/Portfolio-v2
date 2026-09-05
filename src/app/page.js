@@ -9,7 +9,23 @@ export default function Home() {
     name: "",
     email: "",
     message: "",
-  })
+  });
+
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formData);
+
+    setSubmitted(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
 
  const skills = {
     frontend: [
@@ -102,13 +118,7 @@ export default function Home() {
       type: "calculator",
     },
   ];
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(formData);
-
-  };
+  
   return (
     <main className={styles.home}>
       <div className={styles.hero}>
@@ -142,6 +152,8 @@ export default function Home() {
         </div>
 
       </div>
+
+      {submitted && <p>Message sent successfully! ✨</p>}
 
       <section id="about" className={styles.about}>
       
