@@ -5,7 +5,7 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [formData, setFormData] = usueState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
@@ -102,6 +102,13 @@ export default function Home() {
       type: "calculator",
     },
   ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formData);
+
+  };
   return (
     <main className={styles.home}>
       <div className={styles.hero}>
@@ -369,7 +376,9 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Contact</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
-            <form>
+          </div>
+          <div className={styles.contactForm}>
+            <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <label>Name</label>
                 <input 
@@ -381,7 +390,7 @@ export default function Home() {
                 onChange={(e) => {
                   setFormData({
                     ...formData,
-                    name: ee.target.value,
+                    name: e.target.value,
                   });
                 }}
                 />
@@ -422,9 +431,7 @@ export default function Home() {
 
               <button type="submit">Send Message</button>
             </form>
-
           </div>
-          <div className={styles.contactForm}></div>
 
         </div>
         </section>  
