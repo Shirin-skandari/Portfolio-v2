@@ -378,7 +378,10 @@ export default function Home() {
               <span>{selectedProject.title}</span>
             </div>
             <div className={styles.modalInfo}>
-              <h2>{selectedProject.title}</h2>
+              <h2>
+                <span>{selectedProject.title}</span> 
+                <span>{selectedProject.title}</span>
+              </h2>
 
               <p>{selectedProject.details}</p>
 
