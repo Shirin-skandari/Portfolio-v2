@@ -102,7 +102,7 @@ export default function Home() {
       type: "calculator",
     },
   ];
-  return (
+
     <main className={styles.home}>
       <div className={styles.hero}>
         <p className={styles.greeting}>Hi, I'm</p>
@@ -495,5 +495,4 @@ export default function Home() {
         </div>
       )}
     </main>
-  );
 }
