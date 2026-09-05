@@ -124,6 +124,9 @@ export default function Home() {
           <a href="#resume" className={styles.secondaryButton}>
             Resume
           </a>
+          <a href="#contact" className={styles.primaryButton}>
+            Contact Me
+          </a>
         </div>
 
       </div>
@@ -356,7 +359,17 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
+
+      <section id="contact" className={styles.contact}>
+        <h2 className={styles.sectionTitle}>Contact</h2>
+        <div className={styles.contactContent}>
+          <div className={styles.contactInfo}>
+
+          </div>
+          <div className={styles.contactForm}></div>
+
+        </div>
+        </section>      
       {selectedProject && (
         <div 
           className={styles.modalOverlay}
@@ -380,7 +393,9 @@ export default function Home() {
             <div className={styles.modalInfo}>
               <h2>
                 <span>{selectedProject.title}</span> 
-                <span>{selectedProject.title}</span>
+                <span className={styles.revealTitle}>
+                  {selectedProject.title}
+                  </span>
               </h2>
 
               <p>{selectedProject.details}</p>
@@ -408,7 +423,7 @@ export default function Home() {
                 </a>
 
                 <a 
-                  hred={selectedProject.github}
+                  href={selectedProject.github}
                   className={styles.secondaryButton}
                 >
                   GitHub
