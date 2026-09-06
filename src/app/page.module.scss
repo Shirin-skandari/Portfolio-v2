@@ -690,6 +690,140 @@
   }
 }
 
+.contact {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.contactInfo,
+.contactForm {
+  padding: 30px;
+  background: rgba(255, 108, 67, 0.04);
+  border: 1px solid rgba(255, 108, 67, 0.15);
+  border-radius: 16px;
+}
+
+.contactInfo {
+  h3 {
+    margin: 0 0 12px;
+    font-size: 26px;
+    color: #222;
+  }
+
+  > p {
+    margin: 0 0  30px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+.contactItem {
+  padding: 18px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid rgba(255, 108, 67, 0.15);
+  border-radius: 12px;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 108, 67, 0.35);
+    box-shadow: 0 8px 20px rgba(255, 108, 67, 0.08);
+  }
+}
+.itemTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  h4 {
+    margin: 0;
+    font-size: 14px;
+    color: #ff6c43;
+  }
+  a {
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    word-break: break-word;
+
+    &:hover {
+      color: #ff6c43;
+    }
+  }
+}
+.contactForm {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    border: 1px solid rgba(255, 108, 67, 0.2);
+    border-radius: 10px;
+    background: #fff;
+    color: #222;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+
+    &:focus {
+      border-color: #ff6c43;
+      box-shadow: 0 0 0 3px rgba(255, 108, 67, 0.08);
+    }
+  }
+  textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+}
+.contactForm button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6c43;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: #f34f22;
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #ff6c43;
+    outline-offset: 3px;
+  }
+}
+
 .successMessage {
   margin-top: 15px;
   font-size: 14px;
@@ -765,6 +899,18 @@
       box-sizing: border-box;
       justify-content: center;
     }
+  }
+
+  .contact {
+    padding: 70px 20px;
+  }
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .contactInfo,
+  .contactForm {
+    padding: 24px;
   }
 
 }
