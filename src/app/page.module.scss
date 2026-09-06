@@ -690,6 +690,12 @@
   }
 }
 
+.successMessage {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .homeButtons {
     justify-content: center;
@@ -762,3 +768,4 @@
   }
 
 }
+

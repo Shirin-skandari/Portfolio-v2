@@ -5,11 +5,15 @@ import styles from "./page.module.scss";
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
-  const [formData, setFormData] = usueState({
+  const [submitted, setSubmitted] = useState(false);
+
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+
+  
 
  const skills = {
     frontend: [
@@ -102,7 +106,35 @@ export default function Home() {
       type: "calculator",
     },
   ];
-    <main className={styles.home}>
+
+  const contactItem = [
+    {
+      title: "Email",
+      value: "shirin.eskandari@outlook.com",
+      href: "mailto:shirin.eskandari@outlook.com",
+    },
+    {
+      title: "GitHub",
+      value: "github.com/Shirin-skandari",
+      href:  "https://github.com/Shirin-skandari",
+    },
+  ];
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log(formData);
+
+    setSubmitted(true);
+
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
+    return <main className={styles.home}>
       <div className={styles.hero}>
         <p className={styles.greeting}>Hi, I'm</p>
         <h1 className={styles.name}>Shirin Skandari</h1>
@@ -368,62 +400,84 @@ export default function Home() {
         <h2 className={styles.sectionTitle}>Contact</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
-            <form>
-              <div className={styles.formGroup}>
-                <label>Name</label>
-                <input 
-                type="text"
-                name="name"
-                placeholder="Enter your Beautiful Name"
-                required
-                value={formData.name}
-                onChange={(e) => {
-                  setFormData({
-                    ...formData,
-                    name: ee.target.value,
-                  });
-                }}
-                />
-              </div>
+            <h3>Get in Touch</h3>
+            <p>Have a project idea or just want to say Hello? Feel free to reach out!</p>
 
-              <div className={styles.formGroup}>
-                <label>Email</label>
-                <input 
-                type="email"
-                name="email"
-                placeholder="Enter your Amazing Email"
-                required
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    email: e.target.value,
-                  })
-                }
-                />
+            {contactItem.map((item) => (
+              <div 
+              className={styles.contactItem}
+              key={item.title}
+              >
+                
+                <div className={styles.itemTitle}>
+                  <h4>{item.title}</h4>
+                  <a href={item.href}>{item.value}</a>
+                </div>
               </div>
-
-              <div className={styles.formGroup}>
-                <label>Message</label>
-                <textarea 
-                name="message"
-                placeholder="Tell me what's on your mind... ✨"
-                required
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    message: e.target.value,
-                  })
-                }
-                />
-              </div>
-
-              <button type="submit">Send Message</button>
-            </form>
+            ))}
 
           </div>
-          <div className={styles.contactForm}></div>
+          <div className={styles.contactForm}>
+             <form onSubmit={handleSubmit}>
+                <div className={styles.formGroup}>
+                  <label>Name</label>
+                  <input 
+                  type="text"
+                  name="name"
+                  placeholder="Enter your Beautiful Name"
+                  required
+                  value={formData.name}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      name: e.target.value,
+                    });
+                  }}
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label>Email</label>
+                  <input 
+                  type="email"
+                  name="email"
+                  placeholder="Enter your Amazing Email"
+                  required
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      email: e.target.value,
+                    })
+                  }
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
+                  <label>Message</label>
+                  <textarea 
+                  name="message"
+                  placeholder="Tell me what's on your mind... ✨"
+                  required
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      message: e.target.value,
+                    })
+                  }
+                  />
+                </div>
+
+                <button type="submit">Send Message</button>
+              </form>
+              
+              {submitted && (
+                <p className={styles.successMessage}>
+                  Message sent successfully!
+                </p>
+              )}
+          </div>
 
         </div>
         </section>  
