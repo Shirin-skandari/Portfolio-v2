@@ -915,3 +915,13 @@
 
 }
 
+
+.reveal {
+  opacity: 0;
+  transform: translateY(70px);
+  transition: .6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

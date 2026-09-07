@@ -18,13 +18,15 @@ export default function Home() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add(styles.visible);
         }
+      
+      });
+      });
       dataAnimate.forEach((element) => {
         observer.observe(element);
-      });
-      });
     });
+      
   }, []);
 
  const skills = {
@@ -179,7 +181,10 @@ export default function Home() {
 
       </div>
 
-      <section id="about" className={styles.about} data-animate>
+      <section
+       id="contact"
+       className={`${styles.about}  ${styles.reveal}`}
+       data-animate>
       
         <h2 className={styles.sectionTitle}>About Me</h2>
         
@@ -249,7 +254,10 @@ export default function Home() {
       </section>
 
 
-      <section id="resume" className={styles.resume} data-animate>
+      <section
+       id="contact"
+       className={`${styles.resume}  ${styles.reveal}`}
+       data-animate>
         <h2 className={styles.sectionTitle}>Resume</h2>
 
         <div className={styles.education}>
@@ -356,7 +364,10 @@ export default function Home() {
       </div>
       </section>
 
-      <section id="projects" className={styles.projects} data-animate>
+      <section
+       id="contact"
+       className={`${styles.projects}  ${styles.reveal}`}
+       data-animate>
         <h2 className={styles.sectionTitle}>Projects</h2>
 
         <div className={styles.projectsGrid}>
@@ -408,7 +419,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className={styles.contact} data-animate>
+      <section
+       id="contact"
+       className={`${styles.contact}  ${styles.reveal}`}
+       data-animate>
         <h2 className={styles.sectionTitle}>Contact</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
