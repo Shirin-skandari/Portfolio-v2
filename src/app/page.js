@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import {  useEffect,useState } from "react";
 import styles from "./page.module.scss";
 
 export default function Home() {
@@ -13,7 +13,19 @@ export default function Home() {
     message: "",
   })
 
-  
+  useEffect(() => {
+    const dataAnimate = document.querySelectorAll("[data-animate]");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      dataAnimate.forEach((element) => {
+        observer.observe(element);
+      });
+      });
+    });
+  }, []);
 
  const skills = {
     frontend: [
@@ -167,7 +179,7 @@ export default function Home() {
 
       </div>
 
-      <section id="about" className={styles.about}>
+      <section id="about" className={styles.about} data-animate>
       
         <h2 className={styles.sectionTitle}>About Me</h2>
         
@@ -237,7 +249,7 @@ export default function Home() {
       </section>
 
 
-      <section id="resume" className={styles.resume}>
+      <section id="resume" className={styles.resume} data-animate>
         <h2 className={styles.sectionTitle}>Resume</h2>
 
         <div className={styles.education}>
@@ -344,7 +356,7 @@ export default function Home() {
       </div>
       </section>
 
-      <section id="projects" className={styles.projects}>
+      <section id="projects" className={styles.projects} data-animate>
         <h2 className={styles.sectionTitle}>Projects</h2>
 
         <div className={styles.projectsGrid}>
@@ -396,7 +408,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className={styles.contact}>
+      <section id="contact" className={styles.contact} data-animate>
         <h2 className={styles.sectionTitle}>Contact</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
