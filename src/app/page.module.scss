@@ -596,19 +596,49 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.50s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .modalContent {
   position: relative;
-
   width: 600px;
   max-width: 90%;
   max-height: 86vh;
-
   background: white;
-  border-radius: 16px;
-
+  border-radius: 20px;
   overflow: auto;
+
+  border: 1px solid rgba(255, 108, 67, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+
+  animation: modalPop 0.35s ease;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .modalClose {
@@ -646,9 +676,10 @@
     display: grid;
     overflow: hidden;
     padding: 5px 10px;
-    font-size: 20px;
-    color: #333;
-    background: #ff6c43;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    background: transparent;
     z-index: 1;
   }
   h2 span {
@@ -660,23 +691,24 @@
     width: max-content;
     overflow: hidden;
     white-space: nowrap;
+    color: #ff6c43;
     transition: width 0.6s ease;
   }
 
   h2:hover span:last-child {
     width: 100%;
-    color: white;
+    color: #ff6c43;
   }
   > p {
     margin: 10px;
-    color: #555;
-    font-size: 16px;
-    line-height: 1.7;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.8;
   }
 
   h3 {
-      margin: 0;
-      font-size: 18px;
+      margin: 5px 10px 0;
+      font-size: 17px;
       color: #222;
   }
 
@@ -687,24 +719,51 @@
   gap: 8px;
 
   span {
-    padding: 6px 11px;
+    padding: 7px 12px;
     background: rgba(255, 108, 67, 0.08);
-    border: 1px solid rgba(255, 108, 67, 0.15);
+    border: 1px solid rgba(255, 108, 67, 0.18);
     border-radius: 20px;
     color: #ff6c43;
     font-size: 12px;
     font-weight: 600;
+    transition: 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 108, 67, 0.14);
+      border-color: rgba(255, 108, 67, 0.03);
+    }
   }
 }
 .modalFeatures {
   margin: 0;
-  padding-left: 20px;
-  color: #555;
-
+  padding-left: 0;
+  list-style: none;
   li {
-    margin-bottom: 8px;
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px 12px 10px 34px;
+    border-radius: 10px;
+    background: #fafafa;
+    color: #555;
     font-size: 14px;
     line-height: 1.6;
+    transition: 0.25s ease;
+
+    &::before {
+      content: "✓";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #ff6c43;
+      font-weight: 700;
+    }
+
+    &:hover {
+      transform: translateX(4px);
+      background: rgba(255, 108, 67, 0.06);
+    }
   }
 }
 .modalButtons {
