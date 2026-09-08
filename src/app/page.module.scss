@@ -1,3 +1,11 @@
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
 .home {
   width: 100%;
   background-color: #fff3f3;
