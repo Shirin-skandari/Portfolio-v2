@@ -603,11 +603,12 @@
 
   width: 600px;
   max-width: 90%;
+  max-height: 86vh;
 
   background: white;
   border-radius: 16px;
 
-  overflow: hidden;
+  overflow: auto;
 }
 
 .modalClose {
