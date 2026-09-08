@@ -373,7 +373,8 @@ export default function Home() {
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
            <article 
-              className={styles.projectCard} 
+              className={`${styles.projectCard} ${styles.reveal}`} 
+              data-animate
               key={project.title}
               onClick={() => {
                 setSelectedProject(project);
