@@ -149,19 +149,23 @@ export default function Home() {
   };
 
     return <main className={styles.home}>
-      <div className={styles.hero}>
-        <p className={styles.greeting}>Hi, I'm</p>
-        <h1 className={styles.name}>Shirin Skandari</h1>
-        <div className={styles.roles}>
+      <div className={`${styles.hero} ${styles.reveal}`} data-animate>
+        <p className={`${styles.greeting} ${styles.reveal}`} data-animate>
+          Hi, I'm
+          </p>
+        <h1 className={`${styles.name} ${styles.reveal}`} data-animate>
+          Shirin Skandari
+          </h1>
+        <div className={`${styles.roles} ${styles.reveal}`} data-animate>
           <p>Web Designer</p>
           <p>Frontend Developer</p>
         </div>
           
         
-        <h2 className={styles.tagline}>
+        <h2 className={`${styles.tagline} ${styles.reveal}`} data-animate>
           Building ideas into reality
         </h2>
-        <p className={styles.description}>
+        <p className={`${styles.description} ${styles.reveal}`} data-animate>
           I create clean, modern and interactive websites.
         </p>
         <div className={styles.homeButtons}>
@@ -292,7 +296,8 @@ export default function Home() {
                     <div className={styles.skillBar}>
                       <div
                         className={styles.skillProgress}
-                        style={{ width: `${skill.level}%` }}
+                        data-animate
+                        style={{ "--skill-level": `${skill.level}%` }}
                       />
                     </div>
                   </div>
@@ -313,8 +318,9 @@ export default function Home() {
 
                     <div className={styles.skillBar}>
                       <div
-                        className={styles.skillProgress}
-                        style={{ width: `${skill.level}%` }}
+                          className={styles.skillProgress}
+                          data-animate
+                          style={{ "--skill-level": `${skill.level}%` }}
                       />
                     </div>
                   </div>
@@ -336,7 +342,8 @@ export default function Home() {
                     <div className={styles.skillBar}>
                       <div
                         className={styles.skillProgress}
-                        style={{ width: `${skill.level}%` }}
+                        data-animate
+                        style={{ "--skill-level": `${skill.level}%` }}
                       />
                     </div>
                   </div>
