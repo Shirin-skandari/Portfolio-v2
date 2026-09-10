@@ -530,6 +530,7 @@ export default function Home() {
             <button 
             className={styles.modalClose}
             onClick={() => setSelectedProject(null)}
+            aria-label="Close project details"
           >
             × 
             </button>
