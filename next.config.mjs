@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/My-Portfolio",
+  basePath: "/Portfolio-v2",
   allowedDevOrigins: ["172.20.10.2"],
 };
 
