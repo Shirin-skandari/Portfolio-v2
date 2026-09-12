@@ -1,36 +1,138 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Portfolio — Portfolio v2
 
-## Getting Started
+A modern personal portfolio website built with **Next.js, React, JavaScript, and SCSS**.
 
-First, run the development server:
+This project is the second version of my personal portfolio, redesigned with a more modern structure, responsive layout, animations, interactive components, and a proper Next.js architecture.
+
+## 🚀 Live Demo
+
+[View Live Website](https://shirin-skandari.github.io/Portfolio-v2/)
+
+## ✨ Features
+
+* Responsive design for desktop, tablet, and mobile
+* Modern portfolio interface
+* Animated hero section
+* Project showcase with interactive cards
+* Project details modal
+* Skills section with animated progress bars
+* Contact section and contact form
+* Responsive navigation and buttons
+* Smooth UI animations and transitions
+* GitHub Pages deployment with GitHub Actions
+
+## 🛠️ Technologies
+
+* Next.js
+* React
+* JavaScript
+* SCSS
+* Git
+* GitHub
+* GitHub Actions
+
+## 📁 Project Structure
+
+```text
+portfolio-v2/
+├── .github/
+│   └── workflows/
+├── src/
+│   └── app/
+├── public/
+├── .gitignore
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.mjs
+├── package.json
+└── README.md
+```
+
+## 📦 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Shirin-skandari/Portfolio-v2.git
+```
+
+Move into the project directory:
+
+```bash
+cd Portfolio-v2
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏗️ Build
 
-## Learn More
+To create the production version:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project uses Next.js static export for deployment on GitHub Pages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+The project is automatically deployed to **GitHub Pages** using **GitHub Actions**.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Every push to the `main` branch triggers the deployment workflow:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+Push to main
+      ↓
+Install dependencies
+      ↓
+Next.js build
+      ↓
+Generate static output
+      ↓
+Upload deployment artifact
+      ↓
+Deploy to GitHub Pages
+```
+
+## 📚 What I Learned
+
+While building this project, I practiced and improved my knowledge of:
+
+* React components and component structure
+* Next.js project architecture
+* SCSS and responsive styling
+* JavaScript interactions
+* Animations and UI transitions
+* Git and GitHub workflows
+* GitHub Actions
+* Static site deployment
+* Debugging and fixing deployment issues
+* Building a project with a more professional structure
+
+## 🎯 Goal
+
+The goal of this project is to build a professional personal portfolio while improving my frontend development skills and preparing for my future path in **Computer Science, AI, and Machine Learning**.
+
+## 👩‍💻 Author
+
+**Shirin Eskandari**
+
+Future Computer Science & AI Engineer
+
+GitHub: [@Shirin-skandari](https://github.com/Shirin-skandari)
